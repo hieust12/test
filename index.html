@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEO FLOWERS — Meo Flowersandcrochet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#top" class="brand-left">
+        <div class="logo-badge">
+          <svg viewBox="0 0 100 100" class="logo-svg">
+            <rect x="12" y="8" width="76" height="64" rx="4" fill="#D5F2E3" stroke="#76B893" stroke-width="4"/>
+            <path d="M24 68 Q34 50 40 36" stroke="#88B06A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path d="M32 54 Q22 48 25 38 Q33 44 32 54 Z" fill="#88B06A"/>
+            <path d="M35 34 C33 22, 41 18, 45 24 C49 18, 55 23, 50 35 C46 41, 38 40, 35 34 Z" fill="#FFFDF7" stroke="#E6DEC8" stroke-width="1.5"/>
+            <path d="M52 70 C52 54, 56 44, 62 39 L60 28 L68 34 L74 28 L75 39 C81 44, 83 55, 82 70 Z" fill="#181A19"/>
+            <path d="M57 49 Q67 53 77 48" stroke="#3B82F6" stroke-width="2.5" fill="none"/>
+            <circle cx="58" cy="51" r="2.2" fill="#60A5FA"/>
+            <circle cx="61" cy="39" r="1.4" fill="#FDE047"/>
+          </svg>
+          <span class="logo-sub">meo</span>
+        </div>
+        <span class="brand-title">MEO FLOWERS</span>
+      </a>
+
+      <div class="header-right">
+        <span id="adminModeBadge" class="admin-badge hidden">Chế độ Chủ Shop</span>
+        <button id="headerCustomerBtn" type="button" class="customer-chip-btn" title="Đăng nhập / Đăng ký Khách hàng">
+          <span class="customer-avatar" id="headerCustomerAvatar">KH</span>
+          <span id="headerCustomerLabel">Đăng nhập / Đăng ký</span>
+        </button>
+        <button id="headerAccountBtn" type="button" class="account-chip-btn" title="Tài khoản Chủ Shop">
+          <span class="account-avatar" id="headerAccountAvatar">MK</span>
+          <span id="headerAccountLabel">Chủ Shop</span>
+        </button>
+        <button class="menu-btn" id="menuToggle" aria-label="Mở menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slide Menu Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="drawer" id="menuDrawer">
+    <div class="drawer-header">
+      <span class="drawer-brand">MEO FLOWERS</span>
+      <button class="close-btn" id="drawerClose">&times;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#top" class="drawer-link">Trang chủ</a>
+      <a href="#budget" class="drawer-link">Bảng giá & Ngân sách</a>
+      <a href="#gallery" class="drawer-link">Bộ sưu tập theo Tone Màu</a>
+      <a href="#account" class="drawer-link">Tài khoản & Mật khẩu</a>
+      <a href="#contact" class="drawer-link">Liên hệ đặt hoa</a>
+      <hr class="drawer-divider" />
+      <button class="drawer-admin-btn" id="drawerCustomerBtn">🌸 Đăng nhập / Đăng ký Khách hàng</button>
+      <button class="drawer-admin-btn" id="drawerAccountBtn">👤 Tài khoản / Đổi mật khẩu (Chủ Shop)</button>
+      <button class="drawer-admin-btn" id="openAdminBtn">🔒 Quản lý & Đăng ảnh (Chủ Shop)</button>
+      <button class="drawer-admin-btn danger hidden" id="logoutAdminBtn">Đăng xuất / Thoát Chủ Shop</button>
+    </nav>
+  </aside>
+
+  <!-- Hero Section -->
+  <main id="top">
+    <section class="hero">
+      <div class="hero-logo-large">
+        <svg viewBox="0 0 100 100" class="logo-svg large">
+          <rect x="12" y="6" width="76" height="66" rx="3" fill="#D5F2E3" stroke="#76B893" stroke-width="4.5"/>
+          <path d="M23 70 Q34 50 40 35" stroke="#88B06A" stroke-width="3.8" fill="none" stroke-linecap="round"/>
+          <path d="M32 54 Q21 48 24 37 Q33 44 32 54 Z" fill="#88B06A"/>
+          <path d="M34 33 C32 20, 41 16, 45 23 C49 16, 56 22, 51 34 C46 41, 38 40, 34 33 Z" fill="#FFFDF7" stroke="#E5DEC9" stroke-width="1.5"/>
+          <path d="M51 71 C51 54, 55 43, 62 38 L60 26 L68 33 L74 26 L75 38 C81 43, 83 55, 82 71 Z" fill="#181A19"/>
+          <path d="M56 49 Q67 53 77 48" stroke="#3B82F6" stroke-width="2.5" fill="none"/>
+          <circle cx="57" cy="51" r="2.4" fill="#60A5FA"/>
+          <circle cx="61" cy="38" r="1.5" fill="#FDE047"/>
+        </svg>
+        <span class="logo-sub large">meo</span>
+      </div>
+
+      <p class="hero-tagline">— SEOUL INSPIRED FLORIST —</p>
+      <h1 class="hero-title">Meo<br />Flowersandcrochet</h1>
+      <p class="hero-subtitle">HOA LỤA . HOA SÁP . HOA LEN</p>
+
+      <div class="hero-actions">
+        <a href="#budget" class="btn btn-outline">XEM BẢNG GIÁ</a>
+        <a href="#gallery" class="btn btn-solid">CHỌN MẪU THEO TONE MÀU</a>
+        <a id="linkFanpage" href="https://facebook.com" target="_blank" rel="noopener" class="btn btn-solid">FAN PAGE</a>
+        <a id="linkInstagram" href="https://instagram.com" target="_blank" rel="noopener" class="btn btn-solid">INSTAGRAM</a>
+        <a id="linkTiktok" href="https://tiktok.com" target="_blank" rel="noopener" class="btn btn-solid">TIK TOK</a>
+      </div>
+    </section>
+
+    <!-- Slogan & Budget Section -->
+    <section id="budget" class="section budget-section">
+      <h2 class="quote-heading">Vẻ đẹp không phai, cảm xúc<br />còn mãi</h2>
+      <div class="divider-line"></div>
+      <p class="section-kicker">CHỌN HOA THEO TẦM GIÁ & NHU CẦU CỦA BẠN</p>
+
+      <div class="budget-header-row">
+        <span>NGÂN SÁCH</span>
+        <span>&rsaquo;</span>
+      </div>
+
+      <div class="budget-cards">
+        <div class="budget-card" data-budget="mini">
+          <span class="budget-name">Mini Collection</span>
+          <span class="budget-price">150.000</span>
+        </div>
+        <div class="budget-card" data-budget="daily">
+          <span class="budget-name">Daily Collection</span>
+          <span class="budget-price">250.000 — 350.000</span>
+        </div>
+        <div class="budget-card" data-budget="signature">
+          <span class="budget-name">Signature Collection</span>
+          <span class="budget-price">400.000 — 700.000</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tone Color Gallery Section -->
+    <section id="gallery" class="section gallery-section">
+      <div class="divider-line"></div>
+      <p class="section-kicker">BỘ SƯU TẬP THEO NHÓM TONE MÀU</p>
+      <h2 class="section-heading">Chọn tone màu bạn yêu thích</h2>
+
+      <!-- Tone Tabs -->
+      <div class="tone-tabs" id="toneTabs">
+        <button class="tone-tab active" data-tone="all">
+          <span class="dot" style="background: linear-gradient(135deg, #f4c2c2, #2f4842);"></span>
+          Tất cả mẫu <span class="tab-count" id="count-all">0</span>
+        </button>
+        <button class="tone-tab" data-tone="pastel-pink">
+          <span class="dot" style="background: #F4C2C2;"></span>
+          Hồng Pastel <span class="tab-count" id="count-pastel-pink">0</span>
+        </button>
+        <button class="tone-tab" data-tone="cream-white">
+          <span class="dot" style="background: #F5EFE6; border: 1px solid #d5cbbd;"></span>
+          Trắng Kem <span class="tab-count" id="count-cream-white">0</span>
+        </button>
+        <button class="tone-tab" data-tone="red-burgundy">
+          <span class="dot" style="background: #9E2A2B;"></span>
+          Đỏ Quyến Rũ <span class="tab-count" id="count-red-burgundy">0</span>
+        </button>
+        <button class="tone-tab" data-tone="yellow-orange">
+          <span class="dot" style="background: #E09F3E;"></span>
+          Vàng Cam <span class="tab-count" id="count-yellow-orange">0</span>
+        </button>
+        <button class="tone-tab" data-tone="blue-mint">
+          <span class="dot" style="background: #84A59D;"></span>
+          Xanh Tươi Mát <span class="tab-count" id="count-blue-mint">0</span>
+        </button>
+        <button class="tone-tab" data-tone="crochet">
+          <span class="dot" style="background: #DDA15E;"></span>
+          Hoa Len Móc <span class="tab-count" id="count-crochet">0</span>
+        </button>
+      </div>
+
+      <!-- Customer Account Quick Banner -->
+      <div class="customer-banner" id="customerBanner">
+        <div class="customer-banner-info">
+          <span class="customer-banner-badge" id="customerBannerBadge">Khách hàng</span>
+          <div>
+            <strong id="customerBannerTitle">Đăng nhập hoặc Đăng ký tài khoản Khách hàng</strong>
+            <p id="customerBannerDesc">Lưu mẫu hoa yêu thích, đồng bộ giỏ/danh sách mẫu đã chọn và đặt hoa nhanh hơn tại Meo Flowers.</p>
+          </div>
+        </div>
+        <div class="customer-banner-actions">
+          <button type="button" id="openCustomerLoginTabBtn" class="btn btn-outline small">ĐĂNG NHẬP</button>
+          <button type="button" id="openCustomerRegisterTabBtn" class="btn btn-solid small">ĐĂNG KÝ</button>
+          <button type="button" id="customerProfileModalBtn" class="btn btn-solid small hidden">HỒ SƠ KHÁCH HÀNG</button>
+          <button type="button" id="customerLogoutBtn" class="btn btn-outline small hidden">ĐĂNG XUẤT</button>
+        </div>
+      </div>
+
+      <!-- Search & Filter Status -->
+      <div class="gallery-toolbar">
+        <div class="filter-status">
+          <span id="filterSummary">Đang tải bộ sưu tập...</span>
+          <button class="reset-filter-btn hidden" id="resetFilterBtn">Xóa lọc</button>
+        </div>
+        <input type="search" id="searchInput" class="search-input" placeholder="Tìm tên hoặc mã bó hoa..." />
+      </div>
+
+      <!-- Products Grid -->
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <!-- Account & Password Management Section (Giao diện Tài khoản & Mật khẩu) -->
+    <section id="account" class="section account-section">
+      <div class="divider-line"></div>
+      <p class="section-kicker">QUẢN LÝ TÀI KHOẢN & MẬT KHẨU</p>
+      <h2 class="section-heading">Tài khoản & Bảo mật truy cập</h2>
+
+      <div class="account-panel">
+        <div class="account-top-bar">
+          <div class="account-identity">
+            <div class="account-badge-circle" id="accountAvatarCircle">MK</div>
+            <div>
+              <div class="account-name-row">
+                <h3 id="accountDisplayName">Khách tham quan Meo Flowers</h3>
+                <span class="role-pill" id="accountRolePill">Chế độ Khách</span>
+              </div>
+              <p class="account-subinfo" id="accountStatusText">
+                Đăng nhập bằng tài khoản/mật khẩu hoặc mã PIN Chủ Shop để quản lý mẫu hoa và đổi mật khẩu.
+              </p>
+            </div>
+          </div>
+
+          <div class="account-header-actions">
+            <button type="button" id="openAccountModalBtn" class="btn btn-solid small">ĐĂNG NHẬP / ĐỔI MẬT KHẨU</button>
+            <button type="button" id="accountLogoutBtn" class="btn btn-outline small hidden">ĐĂNG XUẤT</button>
+          </div>
+        </div>
+
+        <div class="account-tabs" id="accountSubTabs">
+          <button type="button" class="acc-tab active" data-acctab="profile">Thông tin tài khoản</button>
+          <button type="button" class="acc-tab" data-acctab="password">Đổi mật khẩu & Mã PIN</button>
+          <button type="button" class="acc-tab" data-acctab="saved">Mẫu hoa đã lưu (<span id="savedCountSpan">0</span>)</button>
+        </div>
+
+        <!-- Tab 1: Profile -->
+        <div class="acc-tab-content active" id="acctab-profile">
+          <form id="profileForm" class="acc-form-grid">
+            <label>
+              <span>Tên hiển thị / Chủ tài khoản</span>
+              <input type="text" id="accNameInput" placeholder="VD: Chủ Shop Meo Flowers" />
+            </label>
+            <label>
+              <span>Tên đăng nhập (Username)</span>
+              <input type="text" id="accUsernameInput" placeholder="meoflowers" />
+            </label>
+            <label>
+              <span>Số điện thoại / Zalo liên kết</span>
+              <input type="text" id="accPhoneInput" placeholder="0900000000" />
+            </label>
+            <label>
+              <span>Trạng thái phiên làm việc</span>
+              <input type="text" id="accSessionInput" readonly value="Chưa đăng nhập" />
+            </label>
+            <div class="acc-form-actions full-span">
+              <button type="submit" class="btn btn-solid small">LƯU THÔNG TIN TÀI KHOẢN</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Tab 2: Change Password & PIN -->
+        <div class="acc-tab-content" id="acctab-password">
+          <form id="changePasswordForm" class="acc-form-grid">
+            <label>
+              <span>Mật khẩu hiện tại (hoặc Mã PIN hiện tại)</span>
+              <div class="password-input-wrap">
+                <input type="password" id="currentPasswordInput" placeholder="Nhập mật khẩu/PIN hiện tại" />
+                <button type="button" class="eye-btn" data-target="currentPasswordInput" title="Hiện/ẩn mật khẩu">👁</button>
+              </div>
+            </label>
+            <label>
+              <span>Mật khẩu mới (tối thiểu 4 ký tự)</span>
+              <div class="password-input-wrap">
+                <input type="password" id="newPasswordInput" placeholder="Để trống nếu chỉ đổi PIN" minlength="4" />
+                <button type="button" class="eye-btn" data-target="newPasswordInput" title="Hiện/ẩn mật khẩu">👁</button>
+              </div>
+            </label>
+            <label>
+              <span>Xác nhận mật khẩu mới</span>
+              <div class="password-input-wrap">
+                <input type="password" id="confirmPasswordInput" placeholder="Nhập lại mật khẩu mới" minlength="4" />
+                <button type="button" class="eye-btn" data-target="confirmPasswordInput" title="Hiện/ẩn mật khẩu">👁</button>
+              </div>
+            </label>
+            <label>
+              <span>Mã PIN nhanh (4 số — đồng bộ mở khóa)</span>
+              <input type="text" id="newPinInput" maxlength="8" placeholder="VD: 2026" />
+            </label>
+            <div class="acc-form-actions full-span">
+              <button type="submit" class="btn btn-solid small">CẬP NHẬT MẬT KHẨU / PIN</button>
+              <button type="button" id="resetSecurityDefaultBtn" class="btn btn-outline small">KHÔI PHỤC MẬT KHẨU GỐC</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Tab 3: Saved Products -->
+        <div class="acc-tab-content" id="acctab-saved">
+          <div id="savedProductsList" class="saved-items-grid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <p class="footer-brand">MEO FLOWERSANDCROCHET</p>
+    <p class="footer-note">Hoa Lụa • Hoa Sáp • Hoa Len Thủ Công</p>
+    <p class="footer-copy">&copy; 2026 Meo Flowers. Seoul Inspired Florist.</p>
+  </footer>
+
+  <!-- Floating Quick Contact Popover + Button -->
+  <div class="floating-contact-wrap">
+    <div id="contactPopover" class="contact-popover hidden">
+      <p class="popover-title">Tư vấn đặt hoa ngay</p>
+      <a id="popCall" href="tel:0900000000" class="popover-item">📞 Gọi Hotline Shop</a>
+      <a id="popZalo" href="https://zalo.me" target="_blank" rel="noopener" class="popover-item">💬 Nhắn Zalo</a>
+      <a id="popFb" href="https://facebook.com" target="_blank" rel="noopener" class="popover-item">🌸 Nhắn Fanpage</a>
+    </div>
+    <button type="button" id="floatingContactBtn" class="floating-call" title="Liên hệ đặt hoa ngay">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Login / Account Modal (Giao diện Đăng nhập Tài khoản & Mật khẩu) -->
+  <div class="modal" id="authModal">
+    <div class="modal-card auth-card">
+      <button class="modal-close" id="closeAuthModal">&times;</button>
+      <span class="modal-badge">TÀI KHOẢN MEO FLOWERS</span>
+      <h3 class="admin-title">Đăng nhập Tài khoản</h3>
+      <p class="admin-sub">Nhập tài khoản và mật khẩu để mở quyền quản lý mẫu hoa & đổi mật khẩu.</p>
+
+      <form id="loginForm" class="admin-form">
+        <label>
+          <span>Tên đăng nhập</span>
+          <input type="text" id="loginUsername" value="meoflowers" required />
+        </label>
+
+        <label>
+          <span>Mật khẩu</span>
+          <div class="password-input-wrap">
+            <input type="password" id="loginPassword" placeholder="Nhập mật khẩu (mặc định: 2026)" required />
+            <button type="button" class="eye-btn" data-target="loginPassword" title="Hiện/ẩn mật khẩu">👁</button>
+          </div>
+        </label>
+
+        <div class="auth-hint-box">
+          Mật khẩu mặc định ban đầu: <strong>2026</strong> (có thể đổi sau khi đăng nhập).
+        </div>
+
+        <button type="submit" class="btn btn-solid full">ĐĂNG NHẬP NGAY</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal (Xem chi tiết & Đặt mẫu) -->
+  <div class="modal" id="productModal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeProductModal">&times;</button>
+      <img id="modalImg" src="" alt="Chi tiết bó hoa" class="modal-image" />
+      <div class="modal-body">
+        <span class="modal-badge" id="modalToneBadge">Tone Hồng Pastel</span>
+        <h3 class="modal-title" id="modalTitle">Tên bó hoa</h3>
+        <p class="modal-price" id="modalPrice">250.000đ</p>
+        <p class="modal-desc" id="modalDesc">Mô tả sản phẩm</p>
+        <div class="modal-actions-grid three-cols">
+          <button type="button" id="saveFavoriteBtn" class="btn btn-outline small">♡ LƯU MẪU</button>
+          <button type="button" id="copyOrderBtn" class="btn btn-outline small">COPY MÃ ZALO</button>
+          <a id="modalOrderBtn" href="#" target="_blank" rel="noopener" class="btn btn-solid small">ĐẶT FANPAGE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Upload Modal (Chủ Shop đăng ảnh theo nhóm) -->
+  <div class="modal" id="adminModal">
+    <div class="modal-card admin-card">
+      <button class="modal-close" id="closeAdminModal">&times;</button>
+      <div class="sync-status-row">
+        <span id="syncModeIndicator" class="sync-pill">Chế độ Offline (Local)</span>
+      </div>
+      <h3 class="admin-title">Đăng Ảnh Hoa Theo Nhóm Tone Màu</h3>
+      <p class="admin-sub">Chọn ảnh từ điện thoại hoặc máy tính, phân nhóm tone màu để khách tự vào lựa.</p>
+
+      <form id="uploadForm" class="admin-form">
+        <label>
+          <span>Tên mẫu hoa</span>
+          <input type="text" id="prodName" placeholder="VD: Bó Tulip Hồng Phấn Hàn Quốc" required />
+        </label>
+
+        <div class="form-row">
+          <label>
+            <span>Nhóm Tone Màu</span>
+            <select id="prodTone" required>
+              <option value="pastel-pink">Hồng Pastel</option>
+              <option value="cream-white">Trắng Kem</option>
+              <option value="red-burgundy">Đỏ Quyến Rũ</option>
+              <option value="yellow-orange">Vàng Cam</option>
+              <option value="blue-mint">Xanh Tươi Mát</option>
+              <option value="crochet">Hoa Len Móc</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Gói Ngân Sách</span>
+            <select id="prodBudget" required>
+              <option value="mini">Mini (150.000đ)</option>
+              <option value="daily">Daily (250k - 350k)</option>
+              <option value="signature">Signature (400k - 700k)</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          <span>Giá hiển thị</span>
+          <input type="text" id="prodPrice" placeholder="VD: 280.000đ" required />
+        </label>
+
+        <label>
+          <span>Chọn ảnh từ điện thoại / máy tính</span>
+          <input type="file" id="prodFile" accept="image/*" />
+        </label>
+
+        <label>
+          <span>Hoặc dán đường dẫn ảnh (URL)</span>
+          <input type="url" id="prodUrl" placeholder="https://..." />
+        </label>
+
+        <label>
+          <span>Ghi chú ngắn (Chất liệu hoa lụa / sáp / len)</span>
+          <input type="text" id="prodDesc" placeholder="Hoa sáp thơm cao cấp, giấy gói Hàn Quốc chống thấm" />
+        </label>
+
+        <button type="submit" id="submitUploadBtn" class="btn btn-solid full">THÊM MẪU LÊN WEB</button>
+      </form>
+
+      <div class="admin-tools">
+        <p class="admin-tools-title">Sao lưu & Quản lý dữ liệu:</p>
+        <div class="admin-tools-btns">
+          <button type="button" class="btn btn-outline small" id="exportJsonBtn">Xuất file products.json</button>
+          <button type="button" class="btn btn-outline small" id="resetDefaultBtn">Khôi phục mẫu gốc</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customer Auth Modal (Đăng nhập / Đăng ký Khách hàng) -->
+  <div class="modal" id="customerAuthModal">
+    <div class="modal-card auth-card customer-auth-card">
+      <button class="modal-close" id="closeCustomerAuthModal">&times;</button>
+      <span class="modal-badge">THÀNH VIÊN MEO FLOWERS</span>
+      <h3 class="admin-title" id="customerAuthTitle">Tài khoản Khách hàng</h3>
+      <p class="admin-sub" id="customerAuthSub">Đăng nhập hoặc tạo tài khoản mới để lưu mẫu hoa và đặt hoa nhanh.</p>
+
+      <div class="auth-mode-switch" role="tablist">
+        <button type="button" class="auth-mode-btn active" id="tabCustomerLogin" data-authmode="login">Đăng nhập</button>
+        <button type="button" class="auth-mode-btn" id="tabCustomerRegister" data-authmode="register">Đăng ký</button>
+      </div>
+
+      <!-- Form Đăng nhập Khách hàng -->
+      <form id="customerLoginForm" class="admin-form">
+        <label>
+          <span>Số điện thoại hoặc Email</span>
+          <input type="text" id="custLoginIdentifier" placeholder="VD: 0912345678 hoặc ten@email.com" required />
+        </label>
+
+        <label>
+          <span>Mật khẩu</span>
+          <div class="password-input-wrap">
+            <input type="password" id="custLoginPassword" placeholder="Nhập mật khẩu" required />
+            <button type="button" class="eye-btn" data-target="custLoginPassword" title="Hiện/ẩn mật khẩu">👁</button>
+          </div>
+        </label>
+
+        <div class="auth-remember-row">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="custRememberMe" checked />
+            <span>Ghi nhớ đăng nhập trên thiết bị này</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-solid full">ĐĂNG NHẬP KHÁCH HÀNG</button>
+        <p class="auth-switch-hint">
+          Chưa có tài khoản? <button type="button" class="inline-link-btn" id="switchToRegisterBtn">Đăng ký ngay</button>
+          &nbsp;|&nbsp;
+          <button type="button" class="inline-link-btn" id="resetCustomerPassBtn">Đặt lại MK khách (123456)</button>
+        </p>
+      </form>
+
+      <!-- Form Đăng ký Khách hàng -->
+      <form id="customerRegisterForm" class="admin-form hidden">
+        <label>
+          <span>Họ và tên</span>
+          <input type="text" id="custRegName" placeholder="VD: Nguyễn Minh Anh" required />
+        </label>
+
+        <div class="form-row">
+          <label>
+            <span>Số điện thoại</span>
+            <input type="tel" id="custRegPhone" placeholder="09xxxxxxxx" required />
+          </label>
+          <label>
+            <span>Email (tùy chọn)</span>
+            <input type="email" id="custRegEmail" placeholder="khachhang@email.com" />
+          </label>
+        </div>
+
+        <label>
+          <span>Mật khẩu (tối thiểu 6 ký tự)</span>
+          <div class="password-input-wrap">
+            <input type="password" id="custRegPassword" placeholder="Tạo mật khẩu" minlength="6" required />
+            <button type="button" class="eye-btn" data-target="custRegPassword" title="Hiện/ẩn mật khẩu">👁</button>
+          </div>
+        </label>
+
+        <label>
+          <span>Xác nhận mật khẩu</span>
+          <div class="password-input-wrap">
+            <input type="password" id="custRegConfirmPassword" placeholder="Nhập lại mật khẩu" minlength="6" required />
+            <button type="button" class="eye-btn" data-target="custRegConfirmPassword" title="Hiện/ẩn mật khẩu">👁</button>
+          </div>
+        </label>
+
+        <button type="submit" class="btn btn-solid full">TẠO TÀI KHOẢN KHÁCH HÀNG</button>
+        <p class="auth-switch-hint">
+          Đã có tài khoản? <button type="button" class="inline-link-btn" id="switchToLoginBtn">Đăng nhập</button>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Customer Profile Modal (Hồ sơ & Mẫu hoa đã lưu của Khách hàng) -->
+  <div class="modal" id="customerProfileModal">
+    <div class="modal-card auth-card customer-auth-card">
+      <button class="modal-close" id="closeCustomerProfileModal">&times;</button>
+      <span class="modal-badge">HỒ SƠ KHÁCH HÀNG</span>
+      <div class="cust-profile-header">
+        <div class="cust-profile-avatar" id="custProfileAvatar">KH</div>
+        <div>
+          <h3 class="admin-title" id="custProfileName">Khách hàng</h3>
+          <p class="admin-sub" id="custProfileContact">0900000000</p>
+        </div>
+      </div>
+
+      <div class="auth-mode-switch" id="custProfileTabs" role="tablist">
+        <button type="button" class="auth-mode-btn active" id="tabCustInfo" data-custtab="info">Hồ sơ</button>
+        <button type="button" class="auth-mode-btn" id="tabCustPassword" data-custtab="password">Đổi mật khẩu</button>
+      </div>
+
+      <div id="custTabContentInfo">
+        <form id="customerProfileForm" class="admin-form">
+          <label>
+            <span>Họ và tên</span>
+            <input type="text" id="custEditName" required />
+          </label>
+          <div class="form-row">
+            <label>
+              <span>Số điện thoại</span>
+              <input type="tel" id="custEditPhone" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" id="custEditEmail" placeholder="Chưa cập nhật" />
+            </label>
+          </div>
+          <label>
+            <span>Địa chỉ nhận hoa mặc định</span>
+            <input type="text" id="custEditAddress" placeholder="VD: 123 Điện Biên Phủ, Đà Nẵng" />
+          </label>
+          <button type="submit" class="btn btn-solid full">LƯU THÔNG TIN HỒ SƠ</button>
+        </form>
+      </div>
+
+      <div id="custTabContentPassword" class="hidden">
+        <form id="customerChangePasswordForm" class="admin-form">
+          <label>
+            <span>Mật khẩu hiện tại</span>
+            <div class="password-input-wrap">
+              <input type="password" id="custCurrentPassInput" placeholder="Nhập mật khẩu hiện tại" required />
+              <button type="button" class="eye-btn" data-target="custCurrentPassInput" title="Hiện/ẩn mật khẩu">👁</button>
+            </div>
+          </label>
+
+          <label>
+            <span>Mật khẩu mới (tối thiểu 6 ký tự)</span>
+            <div class="password-input-wrap">
+              <input type="password" id="custNewPassInput" placeholder="Nhập mật khẩu mới" minlength="6" required />
+              <button type="button" class="eye-btn" data-target="custNewPassInput" title="Hiện/ẩn mật khẩu">👁</button>
+            </div>
+          </label>
+
+          <label>
+            <span>Xác nhận mật khẩu mới</span>
+            <div class="password-input-wrap">
+              <input type="password" id="custConfirmPassInput" placeholder="Nhập lại mật khẩu mới" minlength="6" required />
+              <button type="button" class="eye-btn" data-target="custConfirmPassInput" title="Hiện/ẩn mật khẩu">👁</button>
+            </div>
+          </label>
+
+          <button type="submit" class="btn btn-solid full">CẬP NHẬT MẬT KHẨU KHÁCH HÀNG</button>
+        </form>
+      </div>
+
+      <div class="cust-saved-section">
+        <p class="admin-tools-title">Mẫu hoa đã lưu (<span id="modalCustSavedCount">0</span>):</p>
+        <div id="modalCustSavedList" class="saved-items-grid"></div>
+      </div>
+
+      <div class="cust-modal-footer-actions">
+        <button type="button" id="modalCustLogoutBtn" class="btn btn-outline small">ĐĂNG XUẤT</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Firebase SDK (Compat v10 - chỉ kích hoạt khi điền config.js) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
